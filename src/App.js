@@ -13,6 +13,7 @@ function App() {
         'https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false'
       )
       .then(res => {
+        console.log(res.data);
         setCoins(res.data);
         console.log(res.data);
       })
@@ -28,22 +29,37 @@ function App() {
   );
 
   return (
-    <div className='coin-app'>
-      <div className='coin-search'>
-        <h1 className='coin-text'>
-Cryptocurrency</h1>
+    <div className="coin-app">
+      <div className="coin-search">
+        <h1 className="coin-text">Cryptocurrency</h1>
         <form>
           <input
-            className='coin-input'
-            type='text'
+            className="coin-input"
+            type="text"
             onChange={handleChange}
-            placeholder='Search a Crypto'
+            placeholder="Search a Crypto"
           />
         </form>
       </div>
-      {filteredCoins.map(coin => {
+      <div className="coin-container">
+        <div className="coin-row">
+          <div className="coin">
+            <p className="coin-data" style={{ marginLeft: "30px" }}>COIN</p>
+            <p className="coin-symbol" style={{ marginRight: "30px" }}>
+              symbol
+            </p>
+          </div>
+          <div className="coin-data">
+            <p className="coin-price">PRICE</p>
+            <p className="coin-volume">VOLUME</p>
+            <p className="coin-percent">CHANGE</p>
+
+            <p className="coin-marketcap">MARKETCAP</p>
+          </div>
+        </div>
+      </div>
+      {filteredCoins.map((coin) => {
         return (
-         
           <Coin
             key={coin.id}
             name={coin.name}
@@ -54,7 +70,6 @@ Cryptocurrency</h1>
             image={coin.image}
             priceChange={coin.price_change_percentage_24h}
           />
-        
         );
       })}
     </div>
