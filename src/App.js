@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     axios
       .get(
-        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=10&page=1&sparkline=false'
+        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false'
       )
       .then(res => {
         setCoins(res.data);
@@ -43,6 +43,7 @@ Cryptocurrency</h1>
       </div>
       {filteredCoins.map(coin => {
         return (
+         
           <Coin
             key={coin.id}
             name={coin.name}
@@ -53,6 +54,7 @@ Cryptocurrency</h1>
             image={coin.image}
             priceChange={coin.price_change_percentage_24h}
           />
+        
         );
       })}
     </div>
