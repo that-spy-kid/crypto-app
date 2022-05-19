@@ -5,11 +5,11 @@
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: white;
-  color: rgb(14, 13, 13);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
  h1 {
-  color: #0c0909;
+  color: #ffffff;
  }
 
 .coin-app {
@@ -17,7 +17,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 64px;
-  color : rgb(4, 1, 1);
+  color : rgb(255, 255, 255);
 }
 
 .coin-search {
@@ -43,5 +43,5 @@
 }
 
 .coin-input::placeholder {
-  color: #000000;
+  color: rgb(255, 255, 255);
 }
